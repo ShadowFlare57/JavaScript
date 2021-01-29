@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Eval.css">
+    <title>Evaluation N°1</title>
+</head>
+<body>
+    <h1>MaVoiture.fr</h1>
+<form >   
+    <label for="Marque">Marque</label><br>
+    <div id="erreurm"></div>
+    <input type="text" id="marquev" onblur="calcul()"><br>
+    <br>
+    <label for="Modèle">Modèle</label><br>
+    <div id="erreurmo"></div>
+    <input type="text" id="modelev" onblur="calcul()"><br>
+    <br>
+    <label for="Type">Type de carburant</label><br>
+    <div id="erreurc"></div>
+    <select name="carburant" id="carburantv" onchange="calcul()">
+        <option></option>
+        <option value="Essence">Essence</option>
+        <option value="Diesel">Diesel</option>
+    </select><br>    
+    <br>
+    <label for="origine">Origine</label><br>
+    <div id="erreuro"></div>
+    <select name="" id="originev" onchange="calcul()">
+        <option></option>
+        <option value="France">France</option>
+        <option value="Allemagne">Allemagne</option>
+        <option value="Italie">Italie</option>
+    </select><br>    
+    <br>
+    <label for="nbrkm">Nombre de Km</label><br>
+    <div id="erreurkm"></div>
+    <input type="text" id="nbrkm" onblur=calcul()><br>
+    <br>
+    <label for="valeurneuve">Valeur neuve</label><br>
+    <div id="erreurva"></div>
+    <input type="text" id="valeurv" onblur="calcul()"><br>
+    <br>
+    <label for="Travaux">Travaux à prévoir</label><br>
+    <div id="erreurtr"></div>
+    <select name="Travaux" id="travauxv" onchange="calcul()">
+        <option></option>
+        <option value="Oui">Oui</option>
+        <option value="Non">Non</option>
+    </select><br>
+    <br>
+    <button type="button" id="button" onclick="calcultotal()"style="display:none">Estimer</button>
+</form>
+<div id="result" >    
+ <p>Marque : <span id="marquev"></span></p><br>
+ <p>Modèle: <span id="modelev"></span></p><br>
+ <p>Type : <span id="carburantv"></span></p><br>
+ <p>Origine : <span id="originev"></span></p><br>
+ <p>Kilomètres : <span id="nbrkm"></span></p><br>
+ <p>Travaux : <span id="travauxv"></span></p><br>
+ <p>Estimation : <span id="button"></span></p><br>
+</div>
+    <script src="./Eval.js"></script>
+</body>
+</html>

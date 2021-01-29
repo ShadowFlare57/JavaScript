@@ -1,0 +1,24 @@
+body {
+    width: 700px;
+    height: 1800px;
+    border: black solid 2px;
+    margin: auto;
+    font-size: 30px;
+    padding: 10px;
+    margin: auto;
+}
+label {
+    font-weight: bold;
+}
+input {
+    width: 500px;
+}
+select {
+    width: 500px;
+}
+button {
+    width: 200px;
+}
+div {
+    color: red;
+}
