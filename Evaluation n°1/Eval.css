@@ -22,3 +22,6 @@ button {
 div {
     color: red;
 }
+#result {
+    display: none;
+}

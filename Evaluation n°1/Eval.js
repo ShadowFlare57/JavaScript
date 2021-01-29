@@ -42,6 +42,14 @@ function calcultotal() {
     var kilometre = document.getElementById('nbrkm').value;
     var valeur = document.getElementById('valeurv').value;
     var travaux = document.getElementById('travauxv').value;
+
+    var marqueE = document.getElementById('marqueE');
+    var modeleE = document.getElementById('modeleE');
+    var carburantE = document.getElementById('carburantE');
+    var origineE = document.getElementById('origineE');
+    var nbrkmE = document.getElementById('nbrkmE');
+    var travauxvE = document.getElementById('travauxvE');
+    var estimation = document.getElementById('estimationE');
     var result;
 
     if (marque != "" && modele != "" && carburant != "" && origine !="" && kilometre !="" && valeur !="" && travaux !=""){
@@ -95,6 +103,14 @@ function calcultotal() {
             result = valeur - (kilometre * 0.08);
         }
     }
-
+    document.getElementById('result').style.display="block";
+    document.getElementById('formu').style.display="none";
+    marqueE.innerHTML= document.getElementById('marquev').value;
+    modeleE.innerHTML= document.getElementById('modelev').value;
+    carburantE.innerHTML= document.getElementById('carburantv').value;
+    origineE.innerHTML= document.getElementById('originev').value;
+    nbrkmE.innerHTML= document.getElementById('nbrkm').value;
+    travauxvE.innerHTML= document.getElementById('travauxv').value;
+    estimation.innerHTML= result+ ' €';
 
     }

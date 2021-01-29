@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>MaVoiture.fr</h1>
-<form >   
+<form id="formu">   
     <label for="Marque">Marque</label><br>
     <div id="erreurm"></div>
     <input type="text" id="marquev" onblur="calcul()"><br>
@@ -53,13 +53,13 @@
     <button type="button" id="button" onclick="calcultotal()"style="display:none">Estimer</button>
 </form>
 <div id="result" >    
- <p>Marque : <span id="marquev"></span></p><br>
- <p>Modèle: <span id="modelev"></span></p><br>
- <p>Type : <span id="carburantv"></span></p><br>
- <p>Origine : <span id="originev"></span></p><br>
- <p>Kilomètres : <span id="nbrkm"></span></p><br>
- <p>Travaux : <span id="travauxv"></span></p><br>
- <p>Estimation : <span id="button"></span></p><br>
+ <p>Marque : <span id="marqueE"></span></p><br>
+ <p>Modèle: <span id="modeleE"></span></p><br>
+ <p>Type : <span id="carburantE"></span></p><br>
+ <p>Origine : <span id="origineE"></span></p><br>
+ <p>Kilomètres : <span id="nbrkmE"></span></p><br>
+ <p>Travaux : <span id="travauxvE"></span></p><br>
+ <p>Estimation : <span id="estimationE"></span></p><br>
 </div>
     <script src="./Eval.js"></script>
 </body>
