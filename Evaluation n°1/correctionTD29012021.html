@@ -1,0 +1,398 @@
+<meta charset="UTF-8">
+<h1>MAVOITURE.FR</h1>
+<style>
+    button{
+        background: black;
+        color: white;
+        border: none;
+        font-size: 20px;
+    }
+    .erreur
+    {
+        color:red;
+        font-weight: bold;
+        display: none;
+    }
+
+    .titre
+    {
+        font-size: 18px;
+        font-weight: bold;
+        
+    }
+    .res
+    {
+        font-size: 18px;
+        font-weight: bold;
+        color: red;
+    }
+
+    #resultats
+    {
+        display: none;
+       
+    }
+
+    #resPrix
+    {
+        font-size: 20px;
+    }
+
+    #erreurKms
+    {
+        font-size: 18px;
+        font-weight: bold;
+        color:red;
+        display: none;
+    }
+
+ 
+</style>
+
+<form id="formulaire" onsubmit="return calcul()" >
+<label>Marque</label> <span id="erreurMarque" class="erreur">(* vous devez saisir une marque)</span>
+<br>
+<input type="text" name="marque" id="marque" onblur="verifForm()">
+<br><br>
+<label>Modèle </label> <span id="erreurModele" class="erreur">(* vous devez saisir un modèle)</span>
+<br>
+<input type="text" name="modele" id="modele" onblur="verifForm()">
+<br><br>
+<label>Type</label> <span id="erreurType" class="erreur">(* vous devez sélectionner un type)</span>
+<br>
+<select name="type" id="type" onchange="verifForm()">
+    <option value="">-- Sélectionner un type --</option>
+    <option value="essence">Essence</option>
+    <option value="diesel">Diesel</option>
+</select>
+<br><br>
+<label>Origine</label> <span id="erreurOrigine" class="erreur">(* vous devez sélectionner un pays)</span>
+<br>
+<select name="origine" id="origine" onchange="verifForm()">
+    <option value="">-- Sélectionner une origine --</option>
+    <option value="france">France</option>
+    <option value="allemagne">Allemagne</option>
+    <option value="italie">Italie</option>
+</select>
+<br><br>
+<label>Nombre de Km</label> <span id="erreurKm" class="erreur">(* vous devez saisir les kms)</span>
+<br>
+<input type="number" name="km" id="km" onblur="verifForm()">
+<br><br>
+<label>Valeur neuve</label> <span id="erreurValeur" class="erreur">(* vous devez saisir le prix)</span>
+<br>
+<input type="number" name="valeur" id="valeur" onblur="verifForm()">
+<br><br>
+<label>Travaux à prévoir</label> <span id="erreurTravaux" class="erreur">(* vous devez sélectionner les travaux)</span>
+<br>
+<select name="travaux" id="travaux" onchange="verifForm()">
+    <option value="">-- Sélectionner les travaux --</option>
+    <option value="oui">Oui</option>
+    <option value="non">Non</option>
+</select>
+<br><br>
+<button type="submit" id="btnSubmit" style="display: none;">Estimer</button>
+<div id="erreurKms">Le véhicule a trop de km</div>
+</form>
+<br><br>
+
+
+<div id="resultats">
+    <span class="titre">Marque</span> <span class="res" id="resMarque"></span>
+    <br>
+    <span class="titre">Modèle</span> <span class="res" id="resModele"></span>
+    <br>
+    <span class="titre">Type</span> <span class="res" id="resType"></span>
+    <br>
+    <span class="titre">Origine</span> <span class="res" id="resOrigine"></span>
+    <br>
+    <span class="titre">Nombre de km</span> <span class="res" id="resKm"></span>
+    <br>
+    <span class="titre">Travaux à prévoir</span> <span class="res" id="resTravaux"></span>
+    <br>
+    <span class="titre">Prix estimé</span> <span class="res" id="resPrix"></span> 
+</div>
+
+
+<script>
+    verifForm();
+
+    function verifForm()
+    {
+       
+        var marque = document.getElementById('marque').value;
+        var modele = document.getElementById('modele').value;
+        var type = document.getElementById('type').value;
+        var origine = document.getElementById('origine').value;
+        var km = document.getElementById('km').value;
+        var valeur = document.getElementById('valeur').value;
+        var travaux = document.getElementById('travaux').value;
+        
+        if(marque == '')
+        {
+            document.getElementById('erreurMarque').style.display="inline-block";
+            document.getElementById('marque').style.border="2px solid red";
+            
+        }
+        else
+        {
+            document.getElementById('erreurMarque').style.display="none";
+            document.getElementById('marque').style.border="1px solid #dfdfdf";
+        }
+
+        if(modele == '')
+        {
+            document.getElementById('erreurModele').style.display="inline-block";
+            document.getElementById('modele').style.border="2px solid red";
+            
+        }
+        else
+        {
+            document.getElementById('erreurModele').style.display="none";
+            document.getElementById('modele').style.border="1px solid #dfdfdf";
+        }
+
+        if(type == '')
+        {
+            document.getElementById('erreurType').style.display="inline-block";
+            document.getElementById('type').style.border="2px solid red";
+            
+        }
+        else
+        {
+            document.getElementById('erreurType').style.display="none";
+            document.getElementById('type').style.border="1px solid #dfdfdf";
+        }
+
+        if(origine == '')
+        {
+            document.getElementById('erreurOrigine').style.display="inline-block";
+            document.getElementById('origine').style.border="2px solid red";
+            
+        }
+        else
+        {
+            document.getElementById('erreurOrigine').style.display="none";
+            document.getElementById('origine').style.border="1px solid #dfdfdf";
+        }
+
+        if(km == '')
+        {
+            document.getElementById('erreurKm').style.display="inline-block";
+            document.getElementById('km').style.border="2px solid red";
+            
+        }
+        else
+        {
+            document.getElementById('erreurKm').style.display="none";
+            document.getElementById('km').style.border="1px solid #dfdfdf";
+        }
+
+        if(valeur == '')
+        {
+            document.getElementById('erreurValeur').style.display="inline-block";
+            document.getElementById('valeur').style.border="2px solid red";
+          
+        }
+        else
+        {
+            document.getElementById('erreurValeur').style.display="none";
+            document.getElementById('valeur').style.border="1px solid #dfdfdf";
+        }
+
+        if(travaux == '')
+        {
+            document.getElementById('erreurTravaux').style.display="inline-block";
+            document.getElementById('travaux').style.border="2px solid red";
+            
+        }
+        else
+        {
+            document.getElementById('erreurTravaux').style.display="none";
+            document.getElementById('travaux').style.border="1px solid #dfdfdf";
+        }
+
+        if(marque == '' || modele == '' || type == '' || origine == '' || km == '' || valeur == '' || travaux == '')
+        {
+            //EMPECHER L'ENVOI DU FORMULAIRE
+            event.preventDefault();
+        }
+        else
+        {
+            if(km <= 50000)
+            {
+                document.getElementById('btnSubmit').style.display="block";
+                document.getElementById('erreurKms').style.display="none";
+            }
+            else
+            {
+                document.getElementById('erreurKms').style.display="block";
+            }
+        }
+
+     
+        
+    }
+
+    function calcul()
+    {
+
+        var marque = document.getElementById('marque').value;
+        var modele = document.getElementById('modele').value;
+        var type = document.getElementById('type').value;
+        var origine = document.getElementById('origine').value;
+        var km = document.getElementById('km').value;
+        var valeur = document.getElementById('valeur').value;
+        var travaux = document.getElementById('travaux').value;
+        var prixEstime;
+        var decote;
+
+        
+
+
+        // DEBUT CALCUL DU PRIX ESTIME
+
+            // POUR LA FRANCE
+            if(origine == 'france')
+            {
+                if(type == 'essence')
+                {
+                    if(travaux == 'oui')
+                    {
+                        //0,10€ de décotte sur le prix neuf par km
+                        decote = km*0.10;
+                    }
+                    else
+                    {
+                        //0,09€ de décotte sur le prix neuf par km
+                        decote = km*0.09;
+                    }
+                }
+                else
+                {
+                    if(travaux == 'oui')
+                    {
+                        //0,11€ de décotte sur le prix neuf par km
+                        decote = km*0.11;
+                    }
+                    else
+                    {
+                        //0,10€ de décotte sur le prix neuf par km
+                        decote = km*0.10;
+                    }
+
+                }
+                
+            }
+            // FIN FRANCE
+
+
+
+             // POUR L'ALLEMAGNE
+             if(origine == 'allemagne')
+            {
+                if(type == 'essence')
+                {
+                    if(travaux == 'oui')
+                    {
+                        //0,06€ de décotte sur le prix neuf par km
+                        decote = km*0.06;
+                    }
+                    else
+                    {
+                        //0,08€ de décotte sur le prix neuf par km
+                        decote = km*0.08;
+                    }
+                }
+                else
+                {
+                    if(travaux == 'oui')
+                    {
+                        //0,10€ de décotte sur le prix neuf par km
+                        decote = km*0.10;
+                    }
+                    else
+                    {
+                        //0,09€ de décotte sur le prix neuf par km
+                        decote = km*0.09;
+                    }
+
+                }
+                
+            }
+            // FIN ALLEMAGNE
+
+
+
+            // POUR L'ITALIE
+            if(origine == 'italie')
+            {
+                if(type == 'essence')
+                {
+                    if(travaux == 'oui')
+                    {
+                        //0,5€ de décotte sur le prix neuf par km
+                        decote = km*0.5;
+                    }
+                    else
+                    {
+                        //0,7€ de décotte sur le prix neuf par km
+                        decote = km*0.7;
+                    }
+                }
+                else
+                {
+                    if(travaux == 'oui')
+                    {
+                        //0,09€ de décotte sur le prix neuf par km
+                        decote = km*0.09;
+                    }
+                    else
+                    {
+                        //0,08€ de décotte sur le prix neuf par km
+                        decote = km*0.08;
+                    }
+
+                }
+                
+            }
+            // FIN ITALIE
+
+
+            prixEstime = valeur-decote;
+
+        // FIN DU CALCUL
+
+
+        if(prixEstime >= 0)
+        {
+            // AFFICHER LE PRIX EN VERT
+            document.getElementById('resPrix').style.color="green";
+        }
+        else
+        {
+            // AFFICHER LE PRIX EN ROUGE
+            document.getElementById('resPrix').style.color="red";
+        }
+       
+
+
+        // AFFICHER LE DIV DES RESULTATS
+        document.getElementById('resultats').style.display="block";
+
+        // REMPLACER LES VALEURS DANS LE DIV RESULTAT EN FONCTION DU FORMULAIRE
+        document.getElementById('resMarque').innerHTML = marque;
+        document.getElementById('resModele').innerHTML = modele;
+        document.getElementById('resType').innerHTML = type;
+        document.getElementById('resOrigine').innerHTML = origine;
+        document.getElementById('resKm').innerHTML = km;
+        document.getElementById('resTravaux').innerHTML = travaux;
+        document.getElementById('resPrix').innerHTML = prixEstime+' €';
+
+        document.getElementById('formulaire').style.display = 'none';
+        
+
+        return false;
+    }
+
+</script>
