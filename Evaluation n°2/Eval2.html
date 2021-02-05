@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Exercices Fermier</title>
+        <link rel="stylesheet" href="./Eval2.css">
+    </head>
+    <body>
+       <h1>Swimming Poule</h1>
+       <form onsubmit="return rajouter()">
+           <label for="race">Race de la poule :</label>
+           <input id="race">
+           <label for="nom">Nom de la poule :</label>
+           <input id="nom">
+           <label for="color">Couleur de la poule :</label>
+           <input id="color">
+           <label for="œuf">Couleur des œufs :</label>
+           <select id="œuf">
+                <option value=""></option>
+                <option value="beige">Beige</option>
+                <option value="bleu">Bleu</option>
+                <option value="vert">Vert</option>
+                <option value="brun">Brun</option>
+                <option value="blanc">Blanc</option>
+           </select>
+           <label for="nbrœuf">Nombre d'œufs pas jour :</label>
+           <input id="nbrœuf">
+           <div>
+               <button type="submit">Rajouter</button>
+               <button type="button" onclick="affichage()">Voir</button>
+            </div>
+        </form>
+        <form id="tableau" onsubmit="return Voir()">
+            <table>
+                <thead>
+                    <tr>
+                        <td>Race</td>
+                        <td>Nom</td>
+                        <td>Couleur Poule</td>
+                        <td>Couleur œuf</td>
+                        <td>Nbr/jour</td>
+                        <td>Nbr/semaine</td>
+                        <td>Nbr/mois</td>
+                        <td>Nbr/année</td>
+                        <td>Total en €</td>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="7"></td>
+                        <td>Total :</td>
+                        <td id="tabTotal"></td>
+                    </tr>
+                </tfoot>
+            </table>
+            <button type="submit" id="btntableau">Rajouter poule</button>
+        </form>
+    </body>
+    <script src="./Eval2.js"></script>
+</html>
