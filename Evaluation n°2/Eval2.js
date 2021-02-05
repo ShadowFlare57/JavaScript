@@ -146,7 +146,7 @@
         const formulaire = document.getElementsByTagName('form')[0];
         const formTab = document.getElementsByTagName('form')[1];
         
-        function affichage(){
+        function Affichage(){
             formulaire.style.display = "none";
             formTab.style.display = "block";
             remplirTab();
