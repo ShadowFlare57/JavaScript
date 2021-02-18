@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="./Eval.css">
+    <title>Eval Jquery / Bootstrap</title>
+</head>
+<body>
+  <header id="header">
+      <div class="container-fluid" style="background-color: green; color: white;" id="head">
+          <div class="row">
+              <div class="col-lg-4 offset-lg-2">
+                  Votre grainetier en ligne !
+              </div>
+              <div class="col-lg-4 text-end">
+                  Mon compte
+              </div>
+          </div>
+      </div>
+
+
+      <div class="container">
+          <div class="row">
+              <div class="col-12" id="imgjardin">
+                  <img src="./img/jardin.png" alt="" class="img-fluid" width="200" height="150">
+              </div>
+              <nav class="col-5 navbar-light border-top border-end border-2 nav-height " >
+                  <div class="container-fluid text-end">
+                      <a class="navbar-brand" href="#">Graines Potagères</a>
+                  </div>
+              </nav>
+              <nav class="col-2  navbar-light border-top border-2 nav-height">
+                  <div class="container-fluid text-center">
+                      <a class="navbar-brand" href="#">Graines Fleurs</a>
+                  </div>
+              </nav>
+              <nav class="col-5 navbar-light border-top border-start border-2 nav-height">
+                  <div class="container-fluid">
+                      <a class="navbar-brand" href="#">Graines Aromatiques et médicinales</a>
+                  </div>
+              </nav>
+          </div>
+      </div>
+  </header>
+
+
+
+
+  <div class="container-fluid">
+      <div class="row">
+          <div class="single-item" id="slider">
+              <img src="./img/legume.png" alt="" class="img-fluid">
+              <img src="./img/legume2.png" alt="" class="img-fluid">
+              <img src="./img/legume3.png" alt="" class="img-fluid">
+              </div>
+      </div>
+  </div>
+
+
+
+  <div class="container">
+      <div class="row" style="min-height: 90px;">
+          <div class="col-4">
+              <p style="font-size: 40px;font-weight: bold;">Produits phares</p>
+          </div>
+          <div class="col-8 tiret">
+          </div>
+      </div>
+    </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-3"><img class="img-fluid" src="./img/pasteque.png" alt="">
+          </div>
+
+          <div class="col-3"><img class="img-fluid" src="./img/aneth.png" alt="">
+          </div>
+
+          <div class="col-3"><img class="img-fluid" src="./img/Basilic.png" alt="">
+          </div>
+
+          <div class="col-3"><img class="img-fluid" src="./img/carotte.png" alt="">
+          </div>
+
+          <div class="col-3"><img class="img-fluid" src="./img/pasteque2.png" alt="">
+          </div>
+
+          <div class="col-3"><img class="img-fluid" src="./img/aneth2.png" alt="">
+          </div>
+
+          <div class="col-3"><img class="img-fluid" src="./img/betterave.png" alt="">
+          </div>
+
+          <div class="col-3"><img class="img-fluid" src="./img/carotte2.png" alt="">
+          </div>
+
+            </div>
+        </div>
+      </div>
+ 
+
+      <div class="container-fluid">
+        <div class="row" id="bordereau">
+            <p>Accueil / <span style="color: orange;">Contactez-nous</span></p>
+        </div>
+    </div>
+
+
+    <div class="container">
+      <div class="row">
+          <div class="col-3">
+              <h3>Informations</h3>
+              <div id="adresse">
+                  <div>
+                      Le jardin d'Eugene <br>
+                      8 rue du Luxembourg <br>
+                      L-5752 Frisange <br>
+                      Luxembourg
+                  </div>
+              </div>
+              <div id="tel">
+                  <div>
+                      Appelez-nous: <br>
+                      +352 26 36 29 84
+                  </div>
+              </div>
+              <div id="mail">
+                  <div>
+                      Envoyez-nous un e-mail: <br>
+                      contact@lejardindeugene.com
+                  </div>
+              </div>
+          </div>
+
+
+
+          <div class="col-9">
+              <div id="contact">
+                  <div class="row">
+                      <h3 class="col-12">Contactez-nous</h3>
+                  </div>
+                  <div class="row formu">
+                      <div class="col-3 text-end">
+                          <label for="sujet">Sujet</label>
+                      </div>
+                      <div class="col-5">
+                          <select id="sujet" name="sujet" class="form-select" onblur="verif()">
+                              
+                          </select>
+                      </div>
+
+
+                      <div class="col-4" id="erreursujet">
+                          * champ obligatoire
+                      </div>
+                  </div>
+                  <div class="row formu">
+                      <div class="col-3 text-end">
+                          <label for="mail">Adresse e-mail</label>
+                      </div>
+                      <div class="col-5">
+                          <input id="mail" type="text" placeholder="votre@email.com" class="form-control" onblur="verifmail()">
+                      </div>
+                      <div class="col-4" id="erreurmail">
+                          * champ obligatoire
+                      </div>
+                  </div>
+
+
+                  <div class="row formu">
+                      <div class="col-3 text-end">
+                          <label for="doc">Document joint</label>
+                      </div>
+                      <div class="col-5">
+                          <input class="form-control" type="file" id="doc">
+                      </div>
+                      <div class="col-4">
+                          * optionnel
+                      </div>
+                  </div>
+
+
+                  <div class="row formu">
+                      <div class="col-3 text-end">
+                          <label for="area">Message</label>
+                      </div>
+                      <div class="col-5">
+                          <textarea class="form-control" name="area" id="area" rows="3" placeholder="Comment pouvons-nous aider ?" onblur="verifmessage()" ></textarea>
+                      </div>
+                      <div class="col-4" id="erreurmessage">
+                          * champ obligatoire
+                      </div>
+                  </div>
+
+
+                  <div class="row">
+                      <div class="col-12">
+                          <button type="button" class="btn btn-dark btn-lg">Envoyer</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div>
+    <a id="returntop" href="#" style="font-size: 20px;">retour en haut</a>
+</div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="./Eval.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
+</body>
+</html>

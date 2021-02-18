@@ -1,0 +1,77 @@
+#head{
+    padding: 15px;
+}
+#imgjardin{
+    padding-top: 15px
+}
+.nav-height{
+    height: 50px;
+    line-height: 50px;
+}
+.tiret{
+    background-color: lightgrey;
+    border-top: solid white 40px;
+    border-bottom: solid white 40px;
+}
+
+#bordereau{
+    background-color: #2C545CFF;
+    color: white;
+    margin-top: 40px;
+    text-align: center;
+    font-size: 30px;
+    height: 60px;
+    line-height: 60px;
+}
+
+#adresse,
+#tel,
+#mail{
+    color: gray;
+    padding: 20px 0;
+}
+
+#tel{
+    border-top: lightgray solid 2px;
+    border-bottom: lightgray solid 2px;
+}
+
+
+#contact{
+    border: lightgray solid 2px;
+    padding: 25px;
+}
+#area{
+    resize: none;
+}
+
+.error{
+    color: red;
+    font-weight: bold;
+}
+.formu{ 
+    padding-top: 25px;
+    color: gray;
+}
+
+
+
+.fixe{
+    position: fixed;
+    z-index: 2000;
+    background-color: lightgrey;
+    width: 100%;
+}
+
+
+
+#returntop{
+    font-size: 4em;
+    color: green;
+    position: relative;
+    top: 800px;
+    right: 15px;
+    display: none;
+    position: fixed;
+   
+}

@@ -156,3 +156,14 @@
             formTab.style.display = "none";
             return false
         }
+        //remove une poule
+
+        const removepoule = document.getElementById('supprimer');
+
+        function suppr() {
+            let suprpoul = false;
+            for (i of poulailler) {
+                suprpoul = true;
+                poulailler.splice(i,1);
+            }
+        }
