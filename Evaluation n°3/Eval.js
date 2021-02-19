@@ -1,8 +1,7 @@
 $(document).ready(function(){
     $('.single-item').slick(
         {   
-            dots:false,
-            arrow:true,
+            dots:true,
         }
     );
 });
@@ -79,10 +78,10 @@ function selecteur() {
 
         function verifmail()
         {
-            var mail = $('#mail').val();
-            var regex = new RegExp("^[\\w.-]+@[A-Za-z0-9.-]+.[a-z]{2,4}$");
+            var email = $('#mail').val();
+            var regex = new RegExp("^[\w.-]+@[A-Za-z0-9.-]+.[a-z]{2,4}$");
 
-            if ((mail =='') || (!regex.test(mail)))
+            if ((email =='') || (!regex.test(email)))
             {
                 $('#erreurmail').show();
                 $('#erreurmail').addClass('error');
