@@ -78,10 +78,10 @@ function selecteur() {
 
         function verifmail()
         {
-            var email = $('#mail').val();
+            var checkmail = $('#mail').val();
             var regex = new RegExp("^[\w.-]+@[A-Za-z0-9.-]+.[a-z]{2,4}$");
 
-            if ((email =='') || (!regex.test(email)))
+            if ((checkmail =='') || (!regex.test(checkmail)))
             {
                 $('#erreurmail').show();
                 $('#erreurmail').addClass('error');
